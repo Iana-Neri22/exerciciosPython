@@ -3,6 +3,7 @@ from random import choice
 jogador = input('Digite papel, pedra ou tesoura').upper().strip()
 lista = ['PEDRA', 'PAPEL', 'TESOURA']
 computador = choice(lista)
+print(computador)
 
 if jogador == computador:
     print('Empate')
