@@ -3,10 +3,12 @@ notaDois = float(input('Digite a segunda nota:'))
 media = (notaUm + notaDois) / 2
 
 if media < 5.0:
-    print('Reprovado')
-elif media >= 5.0 and 6.9:
-    print('Recuperação')
+    print('Média {:.1f} Reprovado'.format(media))
+elif 5.0 <= media <= 6.9:
+    print('Média {:.1f} Recuperação'.format(media))
 else:
-    print('Aprovado')
+    print('Média {:.1f} Aprovado'.format(media))
+
+
 
 
