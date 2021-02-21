@@ -4,9 +4,9 @@ nomeHomemVelho = ''
 idadeHomemVelho = 0
 
 for c in range(0, 4):
-    nome = input('Qual o nome? ')
+    nome = input('Qual o nome? ').strip()
     idade = int(input('Qual é a idade? '))
-    sexo = input('Qual o sexo? \n M: Masculino \n F: Feminino')
+    sexo = input('Qual o sexo? \n M: Masculino \n F: Feminino \n').upper().strip()
 
     if sexo == 'F' and idade < 20:
         mulheresMenos20 += 1

@@ -1,11 +1,10 @@
-frase = input('Digite uma frase: ').strip()
-fraseInvertida = frase[::-1].strip()
+frase = input('Digite uma frase: ').strip().upper()
+palavras = frase.split()
+junto = ''.join(palavras)
+inverso = junto[::1]
 
-print(frase)
-print(fraseInvertida)
-
-if frase == fraseInvertida:
-    print('É um políndromo')
+if junto == inverso:
+    print('É um palíndromo')
 else:
-    print('Não é um políndromo')
+    print('Não é um palíndromo')
 
