@@ -14,15 +14,23 @@ while continua == 'S':
         continua = input('Quer continuar [S/N]? ').strip().upper()
 
 totalIdades = 0
-totalPessoas = pessoas.count(pessoas)
+totalPessoas = pessoas.__len__()
 mulheresCadastradas = []
 
 for pessoa in pessoas:
-    totalIdades += pessoa[]
+    totalIdades += pessoa['idade']
+
+    if pessoa['sexo'] == 'F':
+        mulheresCadastradas.append(pessoa['nome'])
 
 media = totalIdades / totalPessoas
 
 print(f'O grupo tem {totalPessoas} pessoas.')
 print(f'A média de idade é de {media} anos.')
-#print(f'As mulheres cadastradas foram {}')
+print(f'As mulheres cadastradas foram {mulheresCadastradas}')
+print(f'Lista das pessoas que estão acima da média: ')
 
+for pessoa in pessoas:
+    if pessoa['idade'] > media:
+        for k, v in pessoa.items():
+            print(f'{k} = {v}', end=' ')
