@@ -32,7 +32,7 @@ while mostrarDados > jogadores.__len__():
 while mostrarDados != 999:
     print(f'Levantamento do jogador {jogadores[mostrarDados]["nome"]}')
     for c, v in enumerate(jogadores[mostrarDados]['gols']):
-        print(f'No jogo {c} fez {v} gols.')
+        print(f'No jogo {c + 1} fez {v} gols.')
 
     mostrarDados = int(input('Mostrar dados de qual jogador? [999 para]'))
     if mostrarDados > jogadores.__len__():
