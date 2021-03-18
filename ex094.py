@@ -3,10 +3,18 @@ continua = 'S'
 
 while continua == 'S':
 
+    nome = input('Nome: ')
+    sexo = input('Sexo [M/F]: ').strip().upper()
+
+    while sexo != 'M' and sexo != 'F':
+        sexo = input('Sexo [M/F]: ').strip().upper()
+
+    idade = int(input('Idade: '))
+
     pessoas.append({
-    'nome': input('Nome: '),
-    'sexo': input('Sexo [M/F]: ').strip().upper(),
-    'idade': int(input('Idade: '))
+        'nome': nome,
+        'sexo': sexo,
+        'idade': idade
     })
 
     continua = input('Quer continuar [S/N]? ').strip().upper()
@@ -34,3 +42,4 @@ for pessoa in pessoas:
     if pessoa['idade'] > media:
         for k, v in pessoa.items():
             print(f'{k} = {v}', end=' ')
+        print()

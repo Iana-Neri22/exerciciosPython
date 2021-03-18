@@ -1,22 +1,44 @@
+jogadores = []
 jogador = {}
+controle = 'S'
+contador = 0
 
-jogador['nome'] = input('Nome do jogador: ')
-jogador['gols'] = []
-partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
-total = 0
+while controle == 'S':
+    jogador['cod'] = contador
+    jogador['nome'] = input('Nome do jogador: ')
+    jogador['gols'] = []
+    partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
+    total = 0
+    contador += 1
 
-for c in range(0, partidas):
-    jogador['gols'].append(int(input(f'Quantos gols na partida {c}? ')))
-    total += jogador['gols'][c]
+    for c in range(0, partidas):
+        jogador['gols'].append(int(input(f'Quantos gols na partida {c}? ')))
+        total += jogador['gols'][c]
 
-jogador['total'] = total
+    jogador['total'] = total
 
-for k, v in jogador.items():
-    print(f'O campo {k} tem o valor {v}.')
+    jogadores.append(jogador.copy())
 
-print(f'O jogador {jogador["nome"]} jogou {partidas} partidas.')
+    controle = input('Quer continuar [S/N]? ').upper().strip()
 
-for c, v in enumerate(jogador['gols']):
-    print(f'Na partida {c}, fez {v} gols.')
+for jogador in jogadores:
+        print(f'{jogador}')
 
-print(f'Foi um total de {jogador["total"]} gols')
+
+mostrarDados = int(input('Mostrar dados de qual jogador?'))
+while mostrarDados > jogadores.__len__():
+    mostrarDados = int(input('Mostrar dados de qual jogador?'))
+
+while mostrarDados != 999:
+    print(f'Levantamento do jogador {jogadores[mostrarDados]["nome"]}')
+    for c, v in enumerate(jogadores[mostrarDados]['gols']):
+        print(f'No jogo {c} fez {v} gols.')
+
+    mostrarDados = int(input('Mostrar dados de qual jogador? [999 para]'))
+    if mostrarDados > jogadores.__len__():
+        print('Código Inválido')
+        mostrarDados = int(input('Mostrar dados de qual jogador? [999 para]'))
+
+print('Programa encerrado.')
+
+
