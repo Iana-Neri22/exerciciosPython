@@ -1,10 +1,13 @@
 def contador(inicio, fim, passo):
-    if inicio < fim:
-        for c in range(inicio, fim + 1, passo):
-            print(c)
-    else:
-        for c in range(inicio, fim, -passo):
-            print(c)
+    if passo == 0:
+        passo = 1
+
+    if inicio < fim or passo <= 0:
+        for c in range(inicio, fim + passo, passo):
+            print(c, end=' ')
+    elif passo >= 0:
+        for c in range(inicio, fim - passo, - passo):
+            print(c, end=' ')
 
 
 print('Contagem personalizada')
